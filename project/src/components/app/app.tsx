@@ -7,8 +7,6 @@ import Main from '../../pages/main/main';
 import Hotel from '../../pages/hotel/hotel';
 import PrivateRoute from '../private-route/privateRoute';
 
-const id = 1;
-
 function App(): JSX.Element {
   return (
     <BrowserRouter>
@@ -33,7 +31,7 @@ function App(): JSX.Element {
         />
         <Route
           path={AppRoute.Room}
-          element={<Hotel id={id} />}
+          element={<Hotel />}
         />
         <Route
           path={'*'}

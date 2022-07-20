@@ -3,7 +3,7 @@ import Header from '../../components/header/header';
 
 function Hotel(): JSX.Element {
   const params = useParams();
-  console.log(params);
+  const {id} = params;
 
   return (
     <div className="page">
@@ -306,7 +306,7 @@ function Hotel(): JSX.Element {
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">
-              Other places in the neighbourhood
+              Other places in the neighbourhood {id}
             </h2>
             <div className="near-places__list places__list">
               <article className="near-places__card place-card">
