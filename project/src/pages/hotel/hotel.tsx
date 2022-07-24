@@ -182,6 +182,7 @@ function Hotel(): JSX.Element {
                     </div>
                   </li>
                 </ul>
+                {/* форма отправки комментария - вынести в отдельный компонент и описать логику добавления комментария */}
                 <form className="reviews__form form" action="#" method="post">
                   <label
                     className="reviews__label form__label"

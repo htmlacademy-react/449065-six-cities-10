@@ -6,14 +6,19 @@ import Login from '../../pages/login/login';
 import Main from '../../pages/main/main';
 import Hotel from '../../pages/hotel/hotel';
 import PrivateRoute from '../private-route/privateRoute';
+import { Offer } from '../../types/offer';
 
-function App(): JSX.Element {
+type AppProps = {
+  offers: Offer[],
+}
+
+function App({offers}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={'/'}
-          element={<Main />}
+          element={<Main offers={offers} />}
         />
         <Route
           path={AppRoute.Favorites}
@@ -21,7 +26,7 @@ function App(): JSX.Element {
             <PrivateRoute
               authorizationStatus={AuthorizationStatus.NoAuth}
             >
-              <Favorites />
+              <Favorites offers={offers} />
             </PrivateRoute>
           }
         />

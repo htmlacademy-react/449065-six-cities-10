@@ -1,60 +1,65 @@
-import Place from '../../components/place/place';
+import PlaceList from '../../components/placeList/placeList';
 import Header from '../../components/header/header';
+import { Offer } from '../../types/offer';
 
-const Places = [
-  {
-    id: 0,
-    img: 'img/apartment-03.jpg',
-    name: 'Nice, cozy, warm big bed apartment',
-    price: 180,
-    type: 'Apartment',
-    premium: true,
-    active: false,
-    stars: '100%'
-  },
-  {
-    id: 1,
-    img: 'img/apartment-01.jpg',
-    name: 'Beautiful &amp; luxurious apartment at great location',
-    price: 120,
-    type: 'Apartment',
-    premium: true,
-    active: false,
-    stars: '100%',
-  },
-  {
-    id: 2,
-    img: 'img/room.jpg',
-    name: 'Wood and stone place',
-    price: 80,
-    type: 'Private room',
-    premium: false,
-    active: false,
-    stars: '80%'
-  },
-  {
-    id: 3,
-    img: 'img/apartment-02.jpg',
-    name: 'Canal View Prinsengracht',
-    price: 132,
-    type: 'Apartment',
-    premium: false,
-    active: false,
-    stars: '100%'
-  },
-  {
-    id: 4,
-    img: 'img/room.jpg',
-    name: 'Wood and stone place',
-    price: 80,
-    type: 'Private room',
-    premium: false,
-    active: true,
-    stars: '70%'
-  },
-];
+// const Places = [
+//   {
+//     id: 0,
+//     img: 'img/apartment-03.jpg',
+//     name: 'Nice, cozy, warm big bed apartment',
+//     price: 180,
+//     type: 'Apartment',
+//     premium: true,
+//     active: false,
+//     stars: '100%'
+//   },
+//   {
+//     id: 1,
+//     img: 'img/apartment-01.jpg',
+//     name: 'Beautiful &amp; luxurious apartment at great location',
+//     price: 120,
+//     type: 'Apartment',
+//     premium: true,
+//     active: false,
+//     stars: '100%',
+//   },
+//   {
+//     id: 2,
+//     img: 'img/room.jpg',
+//     name: 'Wood and stone place',
+//     price: 80,
+//     type: 'Private room',
+//     premium: false,
+//     active: false,
+//     stars: '80%'
+//   },
+//   {
+//     id: 3,
+//     img: 'img/apartment-02.jpg',
+//     name: 'Canal View Prinsengracht',
+//     price: 132,
+//     type: 'Apartment',
+//     premium: false,
+//     active: false,
+//     stars: '100%'
+//   },
+//   {
+//     id: 4,
+//     img: 'img/room.jpg',
+//     name: 'Wood and stone place',
+//     price: 80,
+//     type: 'Private room',
+//     premium: false,
+//     active: true,
+//     stars: '70%'
+//   },
+// ];
 
-function Main(): JSX.Element {
+type MainProps = {
+  offers: Offer[],
+}
+
+function Main({offers}: MainProps): JSX.Element {
   return (
     <section>
       <div style={{display: 'none'}}>
@@ -152,9 +157,7 @@ function Main(): JSX.Element {
                     </li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  {Places.map((item) => <Place key={item.id} img={item.img} type={item.type} price={item.price} name={item.name} premium={item.premium} active={item.active} stars={item.stars} />)}
-                </div>
+                <PlaceList offers={offers} />
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>

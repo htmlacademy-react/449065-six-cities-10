@@ -11,7 +11,7 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
-export interface Places {
+export interface Place {
   id: number,
   img: string,
   name: string,
@@ -21,3 +21,5 @@ export interface Places {
   active: boolean,
   stars: string
 }
+
+export type Places = Place[]
