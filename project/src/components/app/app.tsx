@@ -35,8 +35,8 @@ function App({offers}: AppProps): JSX.Element {
           element={<Login />}
         />
         <Route
-          path={AppRoute.Room}
-          element={<Hotel />}
+          path={`${AppRoute.Room}/id`}
+          element={<Hotel offers={offers} />}
         />
         <Route
           path={'*'}
