@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FavoriteList from '../../components/favoriteList/favoriteList';
 import Header from '../../components/header/header';
 import { Offer } from '../../types/offer';
@@ -20,9 +21,7 @@ function Favorites({offers}: FavoriteProps): JSX.Element {
               <li className="favorites__locations-items">
                 <div className="favorites__locations locations locations--current">
                   <div className="locations__item">
-                    <a className="locations__item-link" href="/">
-                      <span>Amsterdam</span>
-                    </a>
+                    <Link className="locations__item-link" to={'/'}><span>Amsterdam</span></Link>
                   </div>
                 </div>
                 <FavoriteList favoriteOffers={favoriteOffers} />
@@ -31,9 +30,9 @@ function Favorites({offers}: FavoriteProps): JSX.Element {
               <li className="favorites__locations-items">
                 <div className="favorites__locations locations locations--current">
                   <div className="locations__item">
-                    <a className="locations__item-link" href="/">
+                    <Link className="locations__item-link" to={'/'}>
                       <span>Cologne</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <FavoriteList favoriteOffers={favoriteOffers} />
@@ -43,7 +42,7 @@ function Favorites({offers}: FavoriteProps): JSX.Element {
         </div>
       </main>
       <footer className="footer container">
-        <a className="footer__logo-link" href="main.html">
+        <Link className="footer__logo-link" to={'/'}>
           <img
             className="footer__logo"
             src="img/logo.svg"
@@ -51,7 +50,7 @@ function Favorites({offers}: FavoriteProps): JSX.Element {
             width="64"
             height="33"
           />
-        </a>
+        </Link>
       </footer>
     </div>
   );

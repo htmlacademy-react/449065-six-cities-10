@@ -19,9 +19,7 @@ function Favorite({img, name, price, type, premium, active, stars, id, setActive
     <article className="favorites__card place-card" onMouseOver={setActiveOffer}>
       {premium ? <div className="place-card__mark"><span>Premium</span></div> : ''}
       <div className="favorites__image-wrapper place-card__image-wrapper">
-        <a href="#">
-          <img className="place-card__image" src={img} width="150" height="110" alt="Place image" />
-        </a>
+        <Link to={'/'}><img className="place-card__image" src={img} width="150" height="110" alt="Place image" /></Link>
       </div>
       <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">

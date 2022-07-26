@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../../components/header/header';
 
 function NotFound(): JSX.Element {
@@ -7,7 +8,7 @@ function NotFound(): JSX.Element {
         <Header/>
         <main className="page__main page__main--index">
           <h1 className="visually-hidden">Page not found</h1>
-          <a href="/main">Go to main page</a>
+          <Link to={'/'}>Go to main page</Link>
         </main>
       </div>
     </section>
