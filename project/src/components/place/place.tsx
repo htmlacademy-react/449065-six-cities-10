@@ -19,7 +19,7 @@ function Place({img, name, price, type, premium, active, stars, id, setActiveOff
     <article className="cities__card place-card" onMouseOver={setActiveOffer}>
       {premium ? <div className="place-card__mark"><span>Premium</span></div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={'/'}>
+        <Link to={`${AppRoute.Room}/:${id}`}>
           <img className="place-card__image" src={img} width="260" height="200" alt="Place image"/>
         </Link>
       </div>
