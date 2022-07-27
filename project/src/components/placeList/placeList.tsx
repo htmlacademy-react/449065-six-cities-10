@@ -12,7 +12,7 @@ function PlaceList({offers}: PlaceListProps): JSX.Element {
 
   return (
     <div className="cities__places-list places__list tabs__content">
-      {offers.map((item) => <Place key={item.id} img={item.img} type={item.type} price={item.price} name={item.name} premium={item.premium} active={item.active} stars={item.stars} id={item.id} setActiveOffer={() => setActiveOffer(item)} />)}
+      {offers.map((item) => <Place key={item.id} {...item} setActiveOffer={() => setActiveOffer(item)} />)}
     </div>
   );
 }

@@ -17,7 +17,7 @@ type PlaceProps = {
 function Place({img, name, price, type, premium, active, stars, id, setActiveOffer}: PlaceProps): JSX.Element {
   return (
     <article className="cities__card place-card" onMouseOver={setActiveOffer}>
-      {premium ? <div className="place-card__mark"><span>Premium</span></div> : ''}
+      {premium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`${AppRoute.Room}/:${id}`}>
           <img className="place-card__image" src={img} width="260" height="200" alt="Place image"/>
@@ -52,7 +52,7 @@ function Place({img, name, price, type, premium, active, stars, id, setActiveOff
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`${AppRoute.Room}/${id}`}>{name}</Link>
+          <Link to={`${AppRoute.Room}/:${id}`}>{name}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
