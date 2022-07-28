@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
+import { MouseEvent } from 'react';
+
 type PlaceProps = {
   img: string;
   name: string;
@@ -6,22 +10,18 @@ type PlaceProps = {
   premium: boolean;
   active: boolean;
   stars: string;
+  id: number;
+  setActiveOffer: (evt: MouseEvent<HTMLElement>) => void;
 }
 
-function Place({img, name, price, type, premium, active, stars}: PlaceProps): JSX.Element {
+function Place({img, name, price, type, premium, active, stars, id, setActiveOffer}: PlaceProps): JSX.Element {
   return (
-    <article className="cities__card place-card">
-      {premium ? <div className="place-card__mark"><span>Premium</span></div> : ''}
+    <article className="cities__card place-card" onMouseOver={setActiveOffer}>
+      {premium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="/">
-          <img
-            className="place-card__image"
-            src={img}
-            width="260"
-            height="200"
-            alt="Place image"
-          />
-        </a>
+        <Link to={`${AppRoute.Room}/:${id}`}>
+          <img className="place-card__image" src={img} width="260" height="200" alt="Place image"/>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -52,7 +52,7 @@ function Place({img, name, price, type, premium, active, stars}: PlaceProps): JS
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">{name}</a>
+          <Link to={`${AppRoute.Room}/:${id}`}>{name}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

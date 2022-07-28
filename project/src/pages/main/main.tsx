@@ -1,60 +1,13 @@
-import Place from '../../components/place/place';
+import { Link } from 'react-router-dom';
+import PlaceList from '../../components/placeList/placeList';
 import Header from '../../components/header/header';
+import { Offer } from '../../types/offer';
 
-const Places = [
-  {
-    id: 0,
-    img: 'img/apartment-03.jpg',
-    name: 'Nice, cozy, warm big bed apartment',
-    price: 180,
-    type: 'Apartment',
-    premium: true,
-    active: false,
-    stars: '100%'
-  },
-  {
-    id: 1,
-    img: 'img/apartment-01.jpg',
-    name: 'Beautiful &amp; luxurious apartment at great location',
-    price: 120,
-    type: 'Apartment',
-    premium: true,
-    active: false,
-    stars: '100%',
-  },
-  {
-    id: 2,
-    img: 'img/room.jpg',
-    name: 'Wood and stone place',
-    price: 80,
-    type: 'Private room',
-    premium: false,
-    active: false,
-    stars: '80%'
-  },
-  {
-    id: 3,
-    img: 'img/apartment-02.jpg',
-    name: 'Canal View Prinsengracht',
-    price: 132,
-    type: 'Apartment',
-    premium: false,
-    active: false,
-    stars: '100%'
-  },
-  {
-    id: 4,
-    img: 'img/room.jpg',
-    name: 'Wood and stone place',
-    price: 80,
-    type: 'Private room',
-    premium: false,
-    active: true,
-    stars: '70%'
-  },
-];
+type MainProps = {
+  offers: Offer[],
+}
 
-function Main(): JSX.Element {
+function Main({offers}: MainProps): JSX.Element {
   return (
     <section>
       <div style={{display: 'none'}}>
@@ -89,34 +42,22 @@ function Main(): JSX.Element {
             <section className="locations container">
               <ul className="locations__list tabs__list">
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
-                    <span>Paris</span>
-                  </a>
+                  <Link className="locations__item-link tabs__item" to={'/'}><span>Paris</span></Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
-                    <span>Cologne</span>
-                  </a>
+                  <Link className="locations__item-link tabs__item" to={'/'}><span>Cologne</span></Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
-                    <span>Brussels</span>
-                  </a>
+                  <Link className="locations__item-link tabs__item" to={'/'}><span>Brussels</span></Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item tabs__item--active" href="/">
-                    <span>Amsterdam</span>
-                  </a>
+                  <Link className='locations__item-link tabs__item tabs__item--active' to={'/'}><span>Amsterdam</span></Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
-                    <span>Hamburg</span>
-                  </a>
+                  <Link className="locations__item-link tabs__item" to={'/'}><span>Hamburg</span></Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
-                    <span>Dusseldorf</span>
-                  </a>
+                  <Link className="locations__item-link tabs__item" to={'/'}><span>Dusseldorf</span></Link>
                 </li>
               </ul>
             </section>
@@ -152,9 +93,7 @@ function Main(): JSX.Element {
                     </li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  {Places.map((item) => <Place key={item.id} img={item.img} type={item.type} price={item.price} name={item.name} premium={item.premium} active={item.active} stars={item.stars} />)}
-                </div>
+                <PlaceList offers={offers} />
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>
