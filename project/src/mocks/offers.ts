@@ -9,6 +9,8 @@ const offers = [
     active: false,
     stars: '100%',
     isFavorite: true,
+    location: {latitude: 52.3909553943508, longitude: 4.85309666406198, zoom: 10},
+    city: 'Amsterdam',
   },
   {
     id: 1,
@@ -20,6 +22,8 @@ const offers = [
     active: false,
     stars: '100%',
     isFavorite: true,
+    location: {latitude: 52.369553943508, longitude: 4.85309666406198, zoom: 10},
+    city: 'Amsterdam',
   },
   {
     id: 2,
@@ -31,6 +35,8 @@ const offers = [
     active: false,
     stars: '80%',
     isFavorite: false,
+    location: {latitude: 52.3909553943508, longitude: 4.929309666406198, zoom: 10},
+    city: 'Amsterdam',
   },
   {
     id: 3,
@@ -42,6 +48,8 @@ const offers = [
     active: false,
     stars: '100%',
     isFavorite: false,
+    location: {latitude: 52.3809553943508, longitude: 4.939309666406198, zoom: 10},
+    city: 'Amsterdam',
   },
   {
     id: 4,
@@ -53,6 +61,8 @@ const offers = [
     active: true,
     stars: '70%',
     isFavorite: false,
+    location: {latitude: 52.3909553943508, longitude: 4.85309666406198, zoom: 10},
+    city: 'Amsterdam',
   },
 ];
 

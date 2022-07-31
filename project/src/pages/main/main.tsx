@@ -2,12 +2,15 @@ import { Link } from 'react-router-dom';
 import PlaceList from '../../components/placeList/placeList';
 import Header from '../../components/header/header';
 import { Offer } from '../../types/offer';
+import Map from '../../components/map/map';
+import { City } from '../../types/city';
 
 type MainProps = {
   offers: Offer[],
+  city: City,
 }
 
-function Main({offers}: MainProps): JSX.Element {
+function Main({offers, city}: MainProps): JSX.Element {
   return (
     <section>
       <div style={{display: 'none'}}>
@@ -96,7 +99,9 @@ function Main({offers}: MainProps): JSX.Element {
                 <PlaceList offers={offers} />
               </section>
               <div className="cities__right-section">
-                <section className="cities__map map"></section>
+                <section className="cities__map map">
+                  <Map offers={offers} city={city} />
+                </section>
               </div>
             </div>
           </div>

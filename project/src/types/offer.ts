@@ -1,3 +1,9 @@
+export interface Location {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+}
+
 export interface Offer {
   id: number,
   img: string,
@@ -7,5 +13,7 @@ export interface Offer {
   premium: boolean,
   active: boolean,
   stars: string,
-  isFavorite: boolean
+  isFavorite: boolean,
+  location: Location,
+  city: string,
 }

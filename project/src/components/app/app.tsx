@@ -7,18 +7,20 @@ import Main from '../../pages/main/main';
 import Hotel from '../../pages/hotel/hotel';
 import PrivateRoute from '../private-route/privateRoute';
 import { Offer } from '../../types/offer';
+import { City } from '../../types/city';
 
 type AppProps = {
   offers: Offer[],
+  city: City,
 }
 
-function App({offers}: AppProps): JSX.Element {
+function App({offers, city}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={'/'}
-          element={<Main offers={offers} />}
+          element={<Main offers={offers} city={city} />}
         />
         <Route
           path={AppRoute.Favorites}
