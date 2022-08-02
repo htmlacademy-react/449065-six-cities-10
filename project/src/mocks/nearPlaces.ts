@@ -1,0 +1,43 @@
+const nearPlaces = [
+  {
+    id: 0,
+    img: 'img/apartment-03.jpg',
+    name: 'Nice, cozy, warm big bed apartment',
+    price: 180,
+    type: 'Apartment',
+    premium: true,
+    active: false,
+    stars: '100%',
+    isFavorite: true,
+    location: {latitude: 52.3909553943508, longitude: 4.85309666406198, zoom: 5},
+    city: 'Amsterdam',
+  },
+  {
+    id: 1,
+    img: 'img/apartment-01.jpg',
+    name: 'Beautiful &amp; luxurious apartment at great location',
+    price: 120,
+    type: 'Apartment',
+    premium: true,
+    active: false,
+    stars: '100%',
+    isFavorite: true,
+    location: {latitude: 52.369553943508, longitude: 4.85309666406198, zoom: 5},
+    city: 'Amsterdam',
+  },
+  {
+    id: 2,
+    img: 'img/room.jpg',
+    name: 'Wood and stone place',
+    price: 80,
+    type: 'Private room',
+    premium: false,
+    active: false,
+    stars: '80%',
+    isFavorite: false,
+    location: {latitude: 52.363553943508, longitude: 4.920309666406298, zoom: 5},
+    city: 'Amsterdam',
+  },
+];
+
+export default nearPlaces;

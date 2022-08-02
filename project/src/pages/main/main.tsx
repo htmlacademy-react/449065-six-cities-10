@@ -11,6 +11,9 @@ type MainProps = {
 }
 
 function Main({offers, city}: MainProps): JSX.Element {
+  const width = '512px';
+  const height = '849px';
+
   return (
     <section>
       <div style={{display: 'none'}}>
@@ -100,7 +103,7 @@ function Main({offers, city}: MainProps): JSX.Element {
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map">
-                  <Map offers={offers} city={city} />
+                  <Map offers={offers} city={city} width={width} height={height}/>
                 </section>
               </div>
             </div>

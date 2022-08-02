@@ -9,6 +9,8 @@ import useMap from '../../hooks/useMap';
 type MapProps = {
   offers: Offer[],
   city: City,
+  width: string,
+  height: string,
 };
 
 const icon = leaflet.icon({
@@ -24,7 +26,7 @@ const icon = leaflet.icon({
 //   iconAnchor: [20, 40]
 // });
 
-function Map({offers, city}: MapProps): JSX.Element {
+function Map({offers, city, width, height}: MapProps): JSX.Element {
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
 
@@ -44,9 +46,8 @@ function Map({offers, city}: MapProps): JSX.Element {
       });
     }
   }, [map, points]);
-
   return (
-    <div style={{width: '512px', height: '849px'}} ref={mapRef} id="map">
+    <div style={{width: `${width}`, height: `${height}`}} ref={mapRef} id="map">
     </div>
   );
 }
