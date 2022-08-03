@@ -7,12 +7,13 @@ import Map from '../../components/map/map';
 import { Offer } from '../../types/offer';
 import { ReviewType } from '../../types/reviewType';
 import { City } from '../../types/city';
+import { Location } from '../../types/offer';
 
 type HotelProps = {
   offers: Offer[],
   reviews: ReviewType[],
   city: City,
-  nearPlaces: Offer[],
+  nearPlaces: Location[],
 }
 
 function Hotel({offers, reviews, city, nearPlaces}: HotelProps): JSX.Element {
@@ -20,6 +21,8 @@ function Hotel({offers, reviews, city, nearPlaces}: HotelProps): JSX.Element {
   const {id} = params;
   const width = '90%';
   const height = '578px';
+  // const points = nearPlaces.map((item) => item.location);
+  const zoom = 13;
 
   const currentOffer = offers.find((item) => item.id === Number(id));
 
@@ -174,7 +177,7 @@ function Hotel({offers, reviews, city, nearPlaces}: HotelProps): JSX.Element {
             </div>
           </div>
           <section className="property__map map">
-            <Map offers={nearPlaces} city={city} width={width} height={height} />
+            <Map zoom={zoom} center={city.location} points={nearPlaces} width={width} height={height} />
             {/*  */}
           </section>
         </section>
